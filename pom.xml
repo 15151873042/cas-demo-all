@@ -17,8 +17,7 @@
 
     <modules>
         <module>cas-server</module>
-        <module>cas-client1</module>
-        <module>cas-client2</module>
+        <module>cas-client</module>
     </modules>
 
 

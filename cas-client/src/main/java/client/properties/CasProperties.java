@@ -1,4 +1,4 @@
-package client1.properties;
+package client.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

@@ -1,7 +1,7 @@
-package client2.config;
+package client.config;
 
 
-import client2.properties.CasProperties;
+import client.properties.CasProperties;
 import org.jasig.cas.client.authentication.AuthenticationFilter;
 import org.jasig.cas.client.session.SingleSignOutFilter;
 import org.jasig.cas.client.session.SingleSignOutHttpSessionListener;
@@ -16,16 +16,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableConfigurationProperties(CasProperties.class)
-public class Cas2Config {
-
+@EnableConfigurationProperties({CasProperties.class})
+public class CasClientConfig {
 
     @Autowired
     private CasProperties casProperties;
 
 
+
     /**
-     * 用于实现单点登出功能
+     * 此监听器的作用是为了防止内存泄漏，当session销毁时，销毁SingleSignOutHttpSessionListener内部维护的session
      */
     @Bean
     public ServletListenerRegistrationBean<SingleSignOutHttpSessionListener> singleSignOutHttpSessionListener() {
@@ -47,6 +47,7 @@ public class Cas2Config {
         registrationBean.setOrder(2);
         return registrationBean;
     }
+
 
 
     @Bean
@@ -89,6 +90,5 @@ public class Cas2Config {
         registrationBean.setOrder(6);
         return registrationBean;
     }
-
 
 }

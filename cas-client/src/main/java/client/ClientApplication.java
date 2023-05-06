@@ -1,12 +1,12 @@
-package client2;
+package client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Client2Application {
+public class ClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Client2Application.class);
+        SpringApplication.run(ClientApplication.class);
     }
 }
